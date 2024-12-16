@@ -7,6 +7,10 @@ data class HeadlineNews(
     val newsArticles: List<HeadlineArticle?>?,
     @SerializedName("status")
     val newsStatus: String?,
+    @SerializedName("code")
+    val newsErrorCode: String? = null,
+    @SerializedName("message")
+    val newsErrorMessage: String? = null,
     @SerializedName("totalResults")
     val newsTotalResults: Int?
 )

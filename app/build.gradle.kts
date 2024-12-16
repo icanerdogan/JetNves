@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -17,8 +19,11 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        val apiKey: String = getLocalProperty("NEWS_API_KEY", project) ?: throw IllegalStateException("API key not found in local.properties")
+        val apiKey: String = getLocalProperty("NEWS_API_KEY", project).toString()
+        val baseUrl: String = getLocalProperty("BASE_URL", project).toString()
+
         buildConfigField("String", "NEWS_API_KEY", "\"$apiKey\"")
+        buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -83,7 +88,11 @@ dependencies {
     implementation(libs.okhttp3)
     implementation(libs.okhttp.logging)
     implementation(libs.gson)
+    implementation(libs.gson.converter)
 
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 }
 
 fun getLocalProperty(propertyName: String, project: Project): String? {
