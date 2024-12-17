@@ -83,6 +83,10 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.window)
 
+    // Runtime
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.runtime.livedata)
+
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.okhttp3)
@@ -92,6 +96,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
 }
 
