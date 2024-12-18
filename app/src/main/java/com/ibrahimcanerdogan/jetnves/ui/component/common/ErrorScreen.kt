@@ -35,7 +35,7 @@ fun ErrorScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colorScheme.background.copy(0.5f)),
         contentAlignment = Alignment.Center
     ) {
         Column(
