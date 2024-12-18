@@ -20,14 +20,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.ibrahimcanerdogan.jetnves.R
 
 @Composable
 fun ErrorScreen(
     message: String,
     onRetry: () -> Unit
 ) {
+    val context = LocalContext.current
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -71,7 +75,7 @@ fun ErrorScreen(
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 )
             ) {
-                Text(text = "Retry")
+                Text(text = context.getString(R.string.str_text_try_again))
             }
         }
     }

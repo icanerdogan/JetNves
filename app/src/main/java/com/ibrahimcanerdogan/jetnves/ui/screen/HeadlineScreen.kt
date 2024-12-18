@@ -10,7 +10,9 @@ import com.ibrahimcanerdogan.jetnves.data.model.headline.HeadlineNews
 import com.ibrahimcanerdogan.jetnves.ui.component.common.ErrorScreen
 import com.ibrahimcanerdogan.jetnves.ui.component.common.LoadingScreen
 import com.ibrahimcanerdogan.jetnves.ui.viewmodel.HeadlineViewModel
+import com.ibrahimcanerdogan.jetnves.util.LOGTAG
 import com.ibrahimcanerdogan.jetnves.util.Resource
+import com.ibrahimcanerdogan.jetnves.util.logMessage
 
 @Composable
 fun HeadlineScreen(
@@ -30,7 +32,7 @@ fun HeadlineScreen(
             val news = (headlineNewsState as Resource.Success<HeadlineNews>).data
             // NewsList(news = news.articles)
             news.newsArticles?.forEach {
-                Log.i("TAG", "${it?.articleTitle}")
+                logMessage(LOGTAG.LAYER_VIEW, it?.articleTitle.toString())
             }
         }
         is Resource.Error -> {
