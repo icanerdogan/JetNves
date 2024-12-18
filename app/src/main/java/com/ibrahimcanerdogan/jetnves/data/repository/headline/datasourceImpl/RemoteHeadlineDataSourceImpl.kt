@@ -3,7 +3,9 @@ package com.ibrahimcanerdogan.jetnves.data.repository.headline.datasourceImpl
 import com.ibrahimcanerdogan.jetnves.data.model.headline.HeadlineNews
 import com.ibrahimcanerdogan.jetnves.data.network.APIService
 import com.ibrahimcanerdogan.jetnves.data.repository.headline.datasource.RemoteHeadlineDataSource
+import com.ibrahimcanerdogan.jetnves.util.LOGTAG
 import com.ibrahimcanerdogan.jetnves.util.Resource
+import com.ibrahimcanerdogan.jetnves.util.logMessage
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -20,6 +22,7 @@ class RemoteHeadlineDataSourceImpl @Inject constructor(
                 val body = response.body()
                 if (body != null) {
                     emit(Resource.Success(body))
+                    logMessage(LOGTAG.LAYER_DOMAIN, body.newsArticles?.first()?.articleTitle.toString())
                 } else {
                     emit(Resource.Error("Empty response body"))
                 }
