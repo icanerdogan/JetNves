@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">JetNves</string>
+    <string name="app_name">JetNves Türkçe</string>
     <!--Warning-->
     <string name="str_warning_empty_body">Gösterilecek herhangi bir veri bulunamadı.</string>
     <string name="str_warning_response_unsuccessful">Veriler alınırken bir hata ile karşılaşıldı.</string>

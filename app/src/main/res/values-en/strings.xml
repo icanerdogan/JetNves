@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">JetNves</string>
+    <string name="app_name">JetNves English</string>
     <!--Warning-->
     <string name="str_warning_empty_body">No data found to show.</string>
     <string name="str_warning_response_unsuccessful">An error was encountered while retrieving the data.</string>
