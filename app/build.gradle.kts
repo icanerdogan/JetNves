@@ -98,6 +98,13 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
+
+    // Icons
+    implementation(libs.androidx.material.icons.core)
+    implementation(libs.androidx.compose.material.iconsExtended)
+
+    // Fonts
+    implementation(libs.androidx.compose.ui.googlefonts)
 }
 
 fun getLocalProperty(propertyName: String, project: Project): String? {

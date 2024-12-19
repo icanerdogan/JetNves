@@ -4,6 +4,10 @@
     <!--Warning-->
     <string name="str_warning_empty_body">No data found to show.</string>
     <string name="str_warning_response_unsuccessful">An error was encountered while retrieving the data.</string>
+    <!--Drawer-->
+    <string name="str_drawer_settings">Settings</string>
+    <string name="str_drawer_location">Change Location</string>
+    <string name="str_drawer_contacts">Contact Us</string>
     <!--Text-->
     <string name="str_text_try_again">Try Again</string>
 </resources>
