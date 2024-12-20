@@ -25,7 +25,9 @@ class RemoteHeadlineDataSourceImpl @Inject constructor(
             if (response.isSuccessful) {
                 val body = response.body()
                 if (body != null) {
-                    emit(Resource.Success(body))
+                    val filteredHeadlineNews = filterNewsBody(body)
+                    emit(Resource.Success(filteredHeadlineNews))
+                    
                 } else {
                     emit(Resource.Error(context.getString(R.string.str_warning_empty_body)))
                 }
@@ -37,5 +39,19 @@ class RemoteHeadlineDataSourceImpl @Inject constructor(
             emit(Resource.Error(context.getString(R.string.str_warning_response_unsuccessful)))
             logMessage(LOGTAG.LAYER_DOMAIN, message = e.localizedMessage ?: e.message.toString())
         }
+    }
+
+    private fun filterNewsBody(body: HeadlineNews): HeadlineNews {
+        val filteredBody = body.newsArticles?.filter {
+            it?.articleTitle != "[Removed]"
+        }
+        val filteredHeadlineNews = HeadlineNews(
+            newsArticles = filteredBody,
+            newsStatus = body.newsStatus,
+            newsErrorCode = body.newsErrorCode,
+            newsErrorMessage = body.newsErrorMessage,
+            newsTotalResults = filteredBody?.size
+        )
+        return filteredHeadlineNews
     }
 }
