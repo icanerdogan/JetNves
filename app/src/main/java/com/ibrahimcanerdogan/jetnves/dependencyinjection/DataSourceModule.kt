@@ -4,6 +4,8 @@ import com.ibrahimcanerdogan.jetnves.data.repository.everything.datasource.Remot
 import com.ibrahimcanerdogan.jetnves.data.repository.everything.datasourceImpl.RemoteSearchDataSourceImpl
 import com.ibrahimcanerdogan.jetnves.data.repository.headline.datasource.RemoteHeadlineDataSource
 import com.ibrahimcanerdogan.jetnves.data.repository.headline.datasourceImpl.RemoteHeadlineDataSourceImpl
+import com.ibrahimcanerdogan.jetnves.data.repository.sources.datasource.RemoteSourceDataSource
+import com.ibrahimcanerdogan.jetnves.data.repository.sources.datasourceImpl.RemoteSourceDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -25,5 +27,11 @@ abstract class DataSourceModule {
     abstract fun bindRemoteSearchDataSource(
         remoteSearchDataSourceImpl: RemoteSearchDataSourceImpl
     ): RemoteSearchDataSource
+
+    @Binds
+    @Singleton
+    abstract fun bindRemoteSourceDataSource(
+        remoteSourceDataSourceImpl: RemoteSourceDataSourceImpl
+    ): RemoteSourceDataSource
 
 }

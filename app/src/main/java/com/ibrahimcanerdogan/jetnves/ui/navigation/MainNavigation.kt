@@ -7,8 +7,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ibrahimcanerdogan.jetnves.ui.screen.HeadlineScreen
 import com.ibrahimcanerdogan.jetnves.ui.screen.SearchScreen
+import com.ibrahimcanerdogan.jetnves.ui.screen.SourceScreen
 import com.ibrahimcanerdogan.jetnves.ui.viewmodel.HeadlineViewModel
 import com.ibrahimcanerdogan.jetnves.ui.viewmodel.SearchViewModel
+import com.ibrahimcanerdogan.jetnves.ui.viewmodel.SourceViewModel
 
 @Composable
 fun MainNavigation() {
@@ -16,6 +18,7 @@ fun MainNavigation() {
     // ViewModels
     val headlineViewModel: HeadlineViewModel = hiltViewModel()
     val searchViewModel: SearchViewModel = hiltViewModel()
+    val sourceViewModel: SourceViewModel = hiltViewModel()
 
     NavHost(navController, startDestination = NavDestinations.SCREEN_HEADLINE.name) {
         composable(NavDestinations.SCREEN_HEADLINE.name) {
@@ -23,6 +26,9 @@ fun MainNavigation() {
         }
         composable(NavDestinations.SCREEN_SEARCH.name) {
             SearchScreen(searchViewModel)
+        }
+        composable(NavDestinations.SCREEN_SOURCE.name) {
+            SourceScreen(sourceViewModel)
         }
     }
 
