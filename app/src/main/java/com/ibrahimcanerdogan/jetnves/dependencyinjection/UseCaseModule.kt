@@ -2,7 +2,9 @@ package com.ibrahimcanerdogan.jetnves.dependencyinjection
 
 import com.ibrahimcanerdogan.jetnves.domain.repository.HeadlineRepository
 import com.ibrahimcanerdogan.jetnves.domain.repository.SearchRepository
+import com.ibrahimcanerdogan.jetnves.domain.repository.SourceRepository
 import com.ibrahimcanerdogan.jetnves.domain.usecase.GetSearchNewsUseCase
+import com.ibrahimcanerdogan.jetnves.domain.usecase.GetSourceNewsUseCase
 import com.ibrahimcanerdogan.jetnves.domain.usecase.GetTopHeadlinesUseCase
 import dagger.Module
 import dagger.Provides
@@ -27,4 +29,10 @@ object UseCaseModule {
         return GetSearchNewsUseCase(searchRepository)
     }
 
+    @Provides
+    fun provideGetSourceNewsUseCase(
+        sourceRepository: SourceRepository
+    ): GetSourceNewsUseCase {
+        return GetSourceNewsUseCase(sourceRepository)
+    }
 }
