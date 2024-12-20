@@ -1,9 +1,9 @@
-package com.ibrahimcanerdogan.jetnves.domain.repository
+package com.ibrahimcanerdogan.jetnves.data.repository.everything.datasource
 
 import com.ibrahimcanerdogan.jetnves.data.model.everything.SearchNews
 import com.ibrahimcanerdogan.jetnves.util.Resource
 
-interface SearchRepository {
+interface RemoteSearchDataSource {
 
     suspend fun getSearchEverythingNews(
         query: String,

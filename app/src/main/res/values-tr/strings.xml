@@ -4,6 +4,11 @@
     <!--Warning-->
     <string name="str_warning_empty_body">Gösterilecek herhangi bir veri bulunamadı.</string>
     <string name="str_warning_response_unsuccessful">Veriler alınırken bir hata ile karşılaşıldı.</string>
+    <!--Error-->
+    <string name="str_error_no_internet">İnternet bağlantısı yok.</string>
+    <string name="str_error_server_down">Maalesef, server çöktü, tekrar deneyiniz.</string>
+    <string name="str_error_server_error">Server hatası ile karşılaşıldı.</string>
+    <string name="str_error_unknown">Bilinmeyen bir hata ile karşılaşıldı.</string>
     <!--Drawer-->
     <string name="str_drawer_settings">Ayarlar</string>
     <string name="str_drawer_location">Konum Değiştir</string>
