@@ -1,6 +1,5 @@
 package com.ibrahimcanerdogan.jetnves.data.model.everything
 
-
 import com.google.gson.annotations.SerializedName
 
 data class SearchNews(

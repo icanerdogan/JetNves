@@ -32,7 +32,7 @@ interface APIService {
         @Query("language") language: String = Constants.languageCode,
         @Query("pageSize") sortBy: String? = NewsSortBy.Popularity.sortCode,
         @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY
-    ): Result<SearchNews>
+    ): Response<SearchNews>
 
     /*
     *TODO: q Keywords or a phrase to search add
@@ -59,5 +59,5 @@ interface APIService {
         @Query("country") country: String = Constants.countryCode,
         @Query("language") language: String = Constants.languageCode,
         @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY
-    ): Result<Source>
+    ): Response<Source>
 }

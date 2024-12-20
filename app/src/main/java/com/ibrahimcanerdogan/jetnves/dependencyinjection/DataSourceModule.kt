@@ -1,5 +1,7 @@
 package com.ibrahimcanerdogan.jetnves.dependencyinjection
 
+import com.ibrahimcanerdogan.jetnves.data.repository.everything.datasource.RemoteSearchDataSource
+import com.ibrahimcanerdogan.jetnves.data.repository.everything.datasourceImpl.RemoteSearchDataSourceImpl
 import com.ibrahimcanerdogan.jetnves.data.repository.headline.datasource.RemoteHeadlineDataSource
 import com.ibrahimcanerdogan.jetnves.data.repository.headline.datasourceImpl.RemoteHeadlineDataSourceImpl
 import dagger.Binds
@@ -17,5 +19,11 @@ abstract class DataSourceModule {
     abstract fun bindRemoteHeadlineDataSource(
         remoteHeadlineDataSourceImpl: RemoteHeadlineDataSourceImpl
     ): RemoteHeadlineDataSource
+
+    @Binds
+    @Singleton
+    abstract fun bindRemoteSearchDataSource(
+        remoteSearchDataSourceImpl: RemoteSearchDataSourceImpl
+    ): RemoteSearchDataSource
 
 }
