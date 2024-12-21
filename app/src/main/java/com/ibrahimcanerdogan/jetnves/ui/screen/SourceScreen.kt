@@ -36,9 +36,9 @@ fun SourceScreen(
                 LoadingScreen()
             }
             is Resource.Success -> {
-                val sourceData = (sources as Resource.Success).data.sourceData
+                val sourceData = (sources as Resource.Success).data
                 LazyColumn {
-                    items(sourceData!!) { source ->
+                    items(sourceData) { source ->
                         Text(text = source.name ?: "No Name")
                     }
                 }
