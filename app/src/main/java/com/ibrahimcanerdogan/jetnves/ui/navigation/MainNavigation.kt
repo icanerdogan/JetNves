@@ -2,9 +2,9 @@ package com.ibrahimcanerdogan.jetnves.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.ibrahimcanerdogan.jetnves.ui.screen.HeadlineScreen
 import com.ibrahimcanerdogan.jetnves.ui.screen.SearchScreen
 import com.ibrahimcanerdogan.jetnves.ui.screen.SourceScreen
@@ -13,8 +13,9 @@ import com.ibrahimcanerdogan.jetnves.ui.viewmodel.SearchViewModel
 import com.ibrahimcanerdogan.jetnves.ui.viewmodel.SourceViewModel
 
 @Composable
-fun MainNavigation() {
-    val navController = rememberNavController()
+fun MainNavigation(
+    navController: NavHostController
+) {
     // ViewModels
     val headlineViewModel: HeadlineViewModel = hiltViewModel()
     val searchViewModel: SearchViewModel = hiltViewModel()
