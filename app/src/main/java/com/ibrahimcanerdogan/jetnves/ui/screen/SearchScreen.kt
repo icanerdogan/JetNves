@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import com.ibrahimcanerdogan.jetnves.data.model.everything.SearchNews
 import com.ibrahimcanerdogan.jetnves.ui.component.common.ErrorScreen
 import com.ibrahimcanerdogan.jetnves.ui.component.common.LoadingScreen
 import com.ibrahimcanerdogan.jetnves.ui.viewmodel.SearchViewModel
@@ -34,9 +35,12 @@ fun SearchScreen(
                 LoadingScreen()
             }
             is Resource.Success -> {
-                LazyColumn {
-                    items((searchState as Resource.Success).data.searchArticles ?: emptyList()) { article ->
-                        Text(text = article?.searchTitle.toString())
+                val searches = (searchState as Resource.Success<SearchNews>).data
+                searches.searchArticles?.let {
+                    LazyColumn {
+                        items(it) { article ->
+                            Text(text = article?.searchTitle ?: "No Title")
+                        }
                     }
                 }
             }
