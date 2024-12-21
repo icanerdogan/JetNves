@@ -1,6 +1,7 @@
 package com.ibrahimcanerdogan.jetnves.domain.usecase
 
 import com.ibrahimcanerdogan.jetnves.data.model.source.Source
+import com.ibrahimcanerdogan.jetnves.data.model.source.SourceData
 import com.ibrahimcanerdogan.jetnves.domain.repository.SourceRepository
 import com.ibrahimcanerdogan.jetnves.util.Resource
 import kotlinx.coroutines.flow.Flow
@@ -12,7 +13,7 @@ class GetSourceNewsUseCase @Inject constructor(
 
     suspend operator fun invoke(
         category: String
-    ): Flow<Resource<Source>> {
+    ): Flow<Resource<List<SourceData>>> {
         return repository.getSources(category)
     }
 }
